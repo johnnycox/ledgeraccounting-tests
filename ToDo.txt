@@ -1,0 +1,48 @@
+FUNCTIONAL
+---------
+Transactions
+    Test new Transactions
+
+        Test per-account Entry                  TODO
+        Main  Entry (no context)                
+            successful Transactions             DONE    entertransactions.spec.js
+
+        Test all error messages                 INPROC
+            Login:                              DONE
+
+    Edit Transactions                           TODO
+    Delete Transactions                         DONE    entertransactions.spec.js
+        Cancel Delete                           DONE    entertransactions.spec.js
+        
+
+Users
+    Auto-logout (time based)                    TODO
+
+SECURITY
+========
+Test that user folders and databases cannot be accessed.           
+    existing folders/databases                  DONE    
+    new users' folders/databases                TODO
+
+Cross-site scripting:                           TODO
+
+LOGIN TESTS:
+-----------
+    Test automatic logout                       TODO
+    user cannot be logged in multiple instances TODO
+
+    fail LOGIN: error messages -                DONE
+    pass LOGIN: login, view index.php, logout - DONE
+
+ACCESS:
+------
+    Forbidden: subfolders protected             DONE
+        /config
+        /src
+        /views
+        /dialogs
+
+    User Not Logged in: redirect to login       DONE
+        /all public pages.
+
+    User logged in cannot access admin.php      DONE

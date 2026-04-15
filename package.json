@@ -1,0 +1,13 @@
+{
+  "name": "ledger-accounting-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for ledger accounting",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^25.6.0"
+  }
+}
