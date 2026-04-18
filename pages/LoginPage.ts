@@ -1,8 +1,9 @@
 import { Page, Locator, expect } from '@playwright/test';
+import { Routes } from '../routes';
 
 export class LoginPage {
   readonly page: Page;
-  readonly url: string;
+  // readonly url: string;
   readonly usernameInput: Locator;
   readonly passwordInput: Locator;
   readonly loginButton: Locator;
@@ -11,7 +12,6 @@ export class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.url = 'http://localhost/LedgerAccounting/login.php';
 
     // Locators
     this.usernameInput = page.locator('input[name="username"]');
@@ -25,7 +25,7 @@ export class LoginPage {
    * Navigate to the login page
    */
   async goto() {
-    await this.page.goto(this.url);
+    await this.page.goto(Routes.Login);
   }
 
   /**
@@ -115,13 +115,13 @@ export class LoginPage {
    * Wait for navigation to the dashboard/index page
    */
   async waitForDashboard() {
-    await this.page.waitForURL('http://localhost/LedgerAccounting/index.php');
+    await this.page.waitForURL(Routes.Home);
   }
 
   /**
    * Wait for navigation back to login page
    */
   async waitForLoginPage() {
-    await this.page.waitForURL(this.url);
+    await this.page.waitForURL(Routes.Login);
   }
 }
